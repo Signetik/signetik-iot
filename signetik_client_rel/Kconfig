@@ -1,0 +1,27 @@
+# /*============================================================================*
+# *         Copyright © 2019-2020 Signetik, LLC -- All Rights Reserved         *
+# *----------------------------------------------------------------------------*
+# *                                                              Signetik, LLC *
+# *                                                           www.signetik.com *
+# *                                      SPDX-License-Identifier: BSD-4-Clause *
+# *============================================================================*/
+
+menu "Signetik client sample"
+
+config COAP_RESOURCE
+	string "CoAP resource - defaults to Californium observable resource"
+	default "obs"
+
+config COAP_SERVER_HOSTNAME
+	string "CoAP server hostname"
+	default "44.228.49.27"	 #Signetik-IoT
+
+config COAP_SERVER_PORT
+	int "CoAP server port"
+	default 5715	#Signetik-IoT
+
+endmenu
+
+menu "Zephyr Kernel"
+source "$ZEPHYR_BASE/Kconfig.zephyr"
+endmenu
