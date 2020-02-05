@@ -15,7 +15,6 @@
 #include <lte_lc.h>
 
 #include <sensor.h>
-#include <misc/__assert.h>
 #include <drivers/gpio.h>
 #include <drivers/regulator.h>
 

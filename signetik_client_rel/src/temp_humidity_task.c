@@ -116,7 +116,7 @@ void read_temp_humidity(struct device *dev)
 
         if (temp_humid_data_ready == true)
         {
-            LOG_INF("temp/humid data ready, T=%d, H=%d", temp_value.val1, temp_value.val2);
+            LOG_INF("temp/humid data ready, T=%d, H=%d", temp_value.val1, humidity_value.val1);
         }
     }
 }
