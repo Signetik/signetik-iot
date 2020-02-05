@@ -44,7 +44,9 @@ void main(void)
 #if defined(CONFIG_REGULATOR)
     reg = device_get_binding("lsensor_reg");
     if (reg) {
+#if !defined(CONFIG_REGULATOR_ALWAYSON)
         regulator_disable(reg);
+#endif
     }
 #endif
 }

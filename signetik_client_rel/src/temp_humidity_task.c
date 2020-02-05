@@ -82,7 +82,9 @@ void read_temp_humidity(struct device *dev)
 
             reg = device_get_binding("lsensor_reg");
             if (reg) {
+#if !defined(CONFIG_REGULATOR_ALWAYSON)
                 regulator_enable(reg);
+#endif
             }
 #endif
 
@@ -103,7 +105,9 @@ void read_temp_humidity(struct device *dev)
 
 #if defined(CONFIG_REGULATOR)
             if (reg) {
+#if !defined(CONFIG_REGULATOR_ALWAYSON)
                 regulator_disable(reg);
+#endif
             }
 #endif
         }
