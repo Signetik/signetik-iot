@@ -106,7 +106,7 @@ void main_thread(void)
 		}
 
 		LOG_INF("Storing sensor data (%d).", record_number + sample_number);
-		accel_get_data(&tha_data.x, &tha_data.y, &tha_data.y);
+		accel_get_data(&tha_data.x, &tha_data.y, &tha_data.z);
 		temp_humid_get_data(&tha_data.temperature, &tha_data.humidity);
 		if (base_time != 0) {
 			s64_t now = k_uptime_get() + base_time;
